@@ -6,10 +6,44 @@
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.nft-gallery h2 {
+.nft-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.nft-header h2 {
   color: var(--accent-color);
   font-size: 1.8rem;
+  margin: 0;
+}
+
+.nft-filters {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  background: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.filter-btn:hover {
+  background: rgba(106, 17, 203, 0.5);
+}
+
+.filter-btn.active {
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  color: white;
+  border-color: transparent;
 }
 
 .nft-grid {
@@ -24,6 +58,7 @@
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
 }
 
 .nft-card:hover {
@@ -58,6 +93,8 @@
   font-weight: bold;
   font-size: 1.1rem;
 }
+
+
 
 .loading, .no-nfts {
   text-align: center;

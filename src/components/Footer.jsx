@@ -6,8 +6,8 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-section">
-          <h3>AU GOLYA RéI DYALK</h3>
-          <p>Next-generation Web3 platform combining creative web design with secure blockchain integration.</p>
+          <h3>ForFree</h3>
+          <p>Professional Web3 platform combining creative web design with secure blockchain integration.</p>
         </div>
         
         <div className="footer-section">
@@ -32,7 +32,7 @@ const Footer = () => {
       </div>
       
       <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} AU GOLYA RéI DYALK. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} ForFree. All rights reserved.</p>
       </div>
     </footer>
   )

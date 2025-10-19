@@ -21,7 +21,7 @@ const Header = ({ account, balance, chainId, onConnect, onDisconnect }) => {
     <header className="header">
       <div className="header-container">
         <div className="logo">
-          <h2>AU GOLYA RéI DYALK</h2>
+          <h2>ForFree</h2>
         </div>
         
         <nav className="navigation">

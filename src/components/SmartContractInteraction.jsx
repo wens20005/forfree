@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './SmartContractInteraction.css'
+import Loader from './Loader.jsx'
 
 const SmartContractInteraction = ({ account }) => {
   const [contractAddress, setContractAddress] = useState('')
@@ -7,20 +8,26 @@ const SmartContractInteraction = ({ account }) => {
   const [params, setParams] = useState('')
   const [result, setResult] = useState('')
   const [status, setStatus] = useState('')
+  const [loading, setLoading] = useState(false)
+  const [loadingMessage, setLoadingMessage] = useState('')
 
   const handleInteraction = async (e) => {
     e.preventDefault()
     setStatus('pending')
     setResult('')
+    setLoading(true)
+    setLoadingMessage('Interacting with smart contract...')
     
     // Simulate contract interaction
     try {
       // In a real app, this would interact with the blockchain
       setTimeout(() => {
+        setLoading(false)
         setStatus('success')
         setResult(`Successfully called ${functionName} on contract ${contractAddress.substring(0, 10)}...`)
       }, 2000)
     } catch (error) {
+      setLoading(false)
       setStatus('error')
       setResult('Failed to interact with contract: ' + error.message)
     }
@@ -29,21 +36,46 @@ const SmartContractInteraction = ({ account }) => {
   const handleMintNFT = async () => {
     setStatus('pending')
     setResult('')
+    setLoading(true)
+    setLoadingMessage('Minting NFT...')
     
     // Simulate NFT minting
     try {
       setTimeout(() => {
+        setLoading(false)
         setStatus('success')
         setResult('NFT minted successfully! Transaction hash: 0xabc123...')
       }, 2000)
     } catch (error) {
+      setLoading(false)
       setStatus('error')
       setResult('Failed to mint NFT: ' + error.message)
     }
   }
 
+  const handleTransferTokens = async () => {
+    setStatus('pending')
+    setResult('')
+    setLoading(true)
+    setLoadingMessage('Transferring tokens...')
+    
+    // Simulate token transfer
+    try {
+      setTimeout(() => {
+        setLoading(false)
+        setStatus('success')
+        setResult('Tokens transferred successfully! Transaction hash: 0xdef456...')
+      }, 2000)
+    } catch (error) {
+      setLoading(false)
+      setStatus('error')
+      setResult('Failed to transfer tokens: ' + error.message)
+    }
+  }
+
   return (
     <div className="contract-interaction">
+      <Loader loading={loading} message={loadingMessage} />
       <h2>Smart Contract Interaction</h2>
       
       <div className="interaction-options">
@@ -51,7 +83,7 @@ const SmartContractInteraction = ({ account }) => {
           Mint NFT
         </button>
         
-        <button className="option-button">
+        <button className="option-button" onClick={handleTransferTokens}>
           Transfer Tokens
         </button>
         

@@ -4,11 +4,15 @@ import Web3 from 'web3'
 import { useWeb3React } from '@web3-react/core'
 import { injected } from './components/WalletConnector'
 
+// Get base path for GitHub Pages
+const basePath = import.meta.env.BASE_URL || '/';
+
 import Header from './components/Header'
 import WalletConnect from './components/WalletConnect'
 import NFTGallery from './components/NFTGallery'
 import TokenTracker from './components/TokenTracker'
 import SmartContractInteraction from './components/SmartContractInteraction'
+import AnalyticsDashboard from './components/AnalyticsDashboard'
 import Footer from './components/Footer'
 
 function App() {
@@ -59,8 +63,8 @@ function App() {
       <main>
         <section className="hero">
           <div className="hero-content">
-            <h1>AU GOLYA RéI DYALK</h1>
-            <p>Next-generation Web3 platform combining creative web design with secure blockchain integration</p>
+            <h1>ForFree</h1>
+            <p>Professional Web3 platform combining creative web design with secure blockchain integration</p>
             {!active ? (
               <WalletConnect onConnect={connectWallet} />
             ) : (
@@ -78,12 +82,13 @@ function App() {
               <NFTGallery account={account} />
               <TokenTracker account={account} />
               <SmartContractInteraction account={account} />
+              <AnalyticsDashboard account={account} />
             </section>
           </>
         )}
 
         <section className="about">
-          <h2>Why Choose AU GOLYA RéI DYALK</h2>
+          <h2>Why Choose ForFree?</h2>
           <div className="features-grid">
             <div className="feature-card">
               <h3>Wallet Integration</h3>

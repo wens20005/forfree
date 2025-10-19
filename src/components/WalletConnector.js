@@ -1,4 +1,12 @@
 import { InjectedConnector } from '@web3-react/injected-connector'
+import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
+
+// Coinbase Wallet integration
+const coinbaseWallet = {
+  enable() {
+    return window.ethereum?.request({ method: 'eth_requestAccounts' });
+  }
+};
 
 export const injected = new InjectedConnector({
   supportedChainIds: [
@@ -13,3 +21,6 @@ export const injected = new InjectedConnector({
     97 // BSC Testnet
   ]
 })
+
+// Coinbase Wallet connector
+export const coinbase = coinbaseWallet

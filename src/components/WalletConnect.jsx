@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import './WalletConnect.css'
+import { coinbase } from './WalletConnector'
 
 const WalletConnect = ({ onConnect }) => {
   const [showModal, setShowModal] = useState(false)
@@ -7,6 +8,16 @@ const WalletConnect = ({ onConnect }) => {
   const handleConnect = () => {
     onConnect()
     setShowModal(false)
+  }
+
+  const handleCoinbaseConnect = async () => {
+    try {
+      await coinbase.enable()
+      onConnect()
+      setShowModal(false)
+    } catch (error) {
+      console.error('Failed to connect Coinbase Wallet:', error)
+    }
   }
 
   return (
@@ -29,7 +40,7 @@ const WalletConnect = ({ onConnect }) => {
               <span>WalletConnect</span>
             </button>
             
-            <button className="wallet-option">
+            <button className="wallet-option" onClick={handleCoinbaseConnect}>
               <span>Coinbase Wallet</span>
             </button>
             
