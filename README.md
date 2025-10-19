@@ -1,6 +1,14 @@
 # AU GOLYA RéI DYALK - Web3 Blockchain Platform
 
+[![GitHub](https://img.shields.io/github/license/wens20005/forfree)](https://github.com/wens20005/forfree)
+[![GitHub stars](https://img.shields.io/github/stars/wens20005/forfree)](https://github.com/wens20005/forfree/stargazers)
+[![GitHub issues](https://img.shields.io/github/issues/wens20005/forfree)](https://github.com/wens20005/forfree/issues)
+
 A next-generation Web3 website combining creative web design with secure blockchain integration. This platform allows users to explore decentralized content, interact with smart contracts, and manage crypto assets safely.
+
+## Repository
+
+This project is hosted on GitHub: [https://github.com/wens20005/forfree](https://github.com/wens20005/forfree)
 
 ## Features
 
@@ -37,10 +45,11 @@ A next-generation Web3 website combining creative web design with secure blockch
 
 ## Getting Started
 
-1. Clone the repository
-2. Install dependencies: `npm install`
-3. Start the development server: `npm run dev`
-4. Open your browser to http://localhost:5174
+1. Clone the repository: `git clone https://github.com/wens20005/forfree.git`
+2. Navigate to the project directory: `cd forfree`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
+5. Open your browser to http://localhost:5174
 
 ## Project Structure
 
