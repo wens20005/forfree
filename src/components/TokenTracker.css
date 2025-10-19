@@ -1,0 +1,94 @@
+.token-tracker {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.token-tracker h2 {
+  margin-bottom: 1.5rem;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+}
+
+.tokens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.token-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.token-card:hover {
+  transform: translateY(-3px);
+}
+
+.token-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.token-header h3 {
+  font-size: 1.1rem;
+}
+
+.token-symbol {
+  background: rgba(106, 17, 203, 0.3);
+  padding: 0.2rem 0.5rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+}
+
+.token-balance {
+  margin-bottom: 1rem;
+}
+
+.balance-amount {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.balance-value {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.token-change {
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.token-change.positive {
+  color: var(--success-color);
+}
+
+.token-change.negative {
+  color: var(--error-color);
+}
+
+.loading, .no-tokens {
+  text-align: center;
+  padding: 2rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+@media (max-width: 768px) {
+  .tokens-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .token-tracker {
+    padding: 1rem;
+  }
+}
